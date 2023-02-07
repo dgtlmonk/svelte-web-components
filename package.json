@@ -1,0 +1,8 @@
+{
+  "name": "perkd-ui",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "author": "Joel Pablo<joel@waveo.com>",
+  "license": "MIT"
+}
