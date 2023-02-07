@@ -1,12 +1,12 @@
 <svelte:options tag="c-barcode"/>
 <script lang="ts">
   import { onMount, tick, afterUpdate } from 'svelte';
-  import JsBarcode from 'jsbarcode';
+  import JsBarcode, { Options } from 'jsbarcode';
 
   let barcode;
-  export let value;
-  export let elementTag = 'img';
-  export let options;
+  export let value: string = "hello";
+  export let elementTag: string = 'img';
+  export let options: Options;
 
   const defaultOptions = {
     format: 'CODE128',

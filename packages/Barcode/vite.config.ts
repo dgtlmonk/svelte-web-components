@@ -24,8 +24,13 @@ export default defineConfig(({ command, mode }) => {
           format: 'es',
           dir: 'dist',
           // https://rollupjs.org/configuration-options/#output-assetfilenames
-          assetFileNames: (assetInfo)=> `[name]/${assetInfo.name}`,
-          entryFileNames: '[name]/[name].js',
+          // assetFileNames: (assetInfo)=> `[name]/${assetInfo.name}`,
+          // entryFileNames: '[name]/[name].js',
+
+          assetFileNames: (assetInfo)=> `${assetInfo.name}`,
+          entryFileNames: '[name].js',
+
+
 
           // shared chunk
           // https://rollupjs.org/configuration-options/#output-chunkfilenames
