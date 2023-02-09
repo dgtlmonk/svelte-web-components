@@ -3,23 +3,15 @@
   "private": true,
   "author": "Joel Pablo<joel@waveo.com>",
   "version": "1.0.0",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "license": "MIT",
   "scripts": {
-    "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "build":"yarn workspaces run build"
+    "sb": "yarn workspace @perkd-ui/storybook run sb",
+    "build": "yarn workspaces run build",
+    "yw": "yarn workspace"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-beta.39",
-    "@storybook/addon-interactions": "^7.0.0-beta.39",
-    "@storybook/addon-links": "^7.0.0-beta.39",
-    "@storybook/blocks": "^7.0.0-beta.39",
-    "@storybook/svelte-vite": "^7.0.0-beta.39",
-    "@storybook/svelte": "^7.0.0-beta.39",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "storybook": "^7.0.0-beta.39",
-    "react-dom": "^18.2.0",
-    "react": "^18.2.0"
-  }
+   }
 }

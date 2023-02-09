@@ -3,10 +3,11 @@
   import { onMount, tick, afterUpdate } from 'svelte';
   import JsBarcode, { Options } from 'jsbarcode';
 
+  export let value = "hello";
+  export let elementTag  = 'img';
+  export let options;
+
   let barcode;
-  export let value: string = "hello";
-  export let elementTag: string = 'img';
-  export let options: Options;
 
   const defaultOptions = {
     format: 'CODE128',

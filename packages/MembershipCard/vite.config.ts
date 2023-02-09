@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { folderInput } from 'rollup-plugin-folder-input'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess'
 
 // https://vitejs.dev/config/build-options.html
 export default defineConfig(({ command, mode }) => {
@@ -12,7 +13,10 @@ export default defineConfig(({ command, mode }) => {
       svelte({
         compilerOptions: {
           customElement: isProd,
+          css: true
         },
+        emitCss: true,
+        preprocess: sveltePreprocess()
       })
     ],
     build: {
@@ -30,12 +34,11 @@ export default defineConfig(({ command, mode }) => {
           assetFileNames: (assetInfo)=> `${assetInfo.name}`,
           entryFileNames: '[name].js',
 
-
-
           // shared chunk
           // https://rollupjs.org/configuration-options/#output-chunkfilenames
           chunkFileNames:'internal/[name].js'
-        }
+        },
+      
       }
     },
   }

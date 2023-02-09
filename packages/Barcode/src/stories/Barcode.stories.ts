@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+import Barcode from '../Barcode.svelte';
 
-import Barcode from './Barcode.svelte';
+import  {BaseOptions } from 'jsbarcode';
 
 // Barcode options
 // https://github.com/lindell/JsBarcode/#options
@@ -9,6 +10,8 @@ const meta = {
   title: 'Example/Barcode',
   component: Barcode,
   tags: ['autodocs'],
+
+  // Controls - https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
     value: { control: 'text' },
     elementTag: { control: 'select', options: ['img', 'canvas', 'svg'] },
@@ -21,11 +24,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/svelte/writing-stories/args
-export const Basic: Story = {
+export const Example: Story = {
   args: {
     value: '123456789012',
     elementTag: 'img',
-    options:{
+    options: {
       format: 'CODE128',
       width: 2,
       height: 100,
