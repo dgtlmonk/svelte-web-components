@@ -2,7 +2,7 @@
   "name": "perkd-ui-components",
   "private": true,
   "author": "Joel Pablo<joel@waveo.com>",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "workspaces": [
     "packages/*"
   ],
@@ -12,6 +12,5 @@
     "build": "yarn workspaces run build",
     "yw": "yarn workspace"
   },
-  "devDependencies": {
-   }
+  "devDependencies": {}
 }
