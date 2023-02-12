@@ -9,6 +9,7 @@ const meta = {
   // Controls - https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
    src: { control: 'text' },
+   borderRadius: { control: { type: 'number'} },
   },
 } satisfies Meta<Card>;
 
@@ -20,6 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     src: 'https://149367133.v2.pressablecdn.com/wp-content/uploads/2020/07/Her-GadgetMatch-Starbucks-Rewards-03.jpg',
-  },
+    borderRadius: 16,
+  }
 };
 
