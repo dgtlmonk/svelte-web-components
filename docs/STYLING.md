@@ -127,8 +127,8 @@ export default () => (
 
 
 #### Resources
-https://css-tricks.com/styling-a-web-component/
-https://usefulangle.com/post/370/custom-elements-external-cs-stylesheet
-https://erdemgonul.medium.com/styling-custom-components-in-svelte-3723ad752cd2
-https://nuclia.com/developers/how-to-run-svelte-custom-elements-in-dev-mode/
-https://svelte.dev/repl/bb42c17d585b4236824e1d5e48fe92b5?version=3.38.0
+* https://css-tricks.com/styling-a-web-component/
+* https://usefulangle.com/post/370/custom-elements-external-cs-stylesheet
+* https://erdemgonul.medium.com/styling-custom-components-in-svelte-3723ad752cd2
+* https://nuclia.com/developers/how-to-run-svelte-custom-elements-in-dev-mode/
+* https://svelte.dev/repl/bb42c17d585b4236824e1d5e48fe92b5?version=3.38.0
