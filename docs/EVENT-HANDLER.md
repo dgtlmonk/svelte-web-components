@@ -11,7 +11,7 @@ Vue can listen to native DOM events dispatched from Custom Elements. Its declara
 
 
 ```js
-<script setup lang="ts">
+<script setup>
 function handleEvent(event){
   console.log(event.detail)
 }
@@ -26,25 +26,26 @@ function handleEvent(event){
 
 
 
-## ReactJS (v18 and below. v19 will fully support this out of the box)
+## ReactJS <=v18 (v19 will fully support this out of the box)
 ```js
 
 // hooks
-function useWebComponentEvent(eventName) {
+import {  useEffect, useRef, useState } from "react";
+
+export function useWebComponentEvent(eventName: string) {
     const [data, setData] = useState(undefined);
-    const componentRef = useRef();
+    const componentRef = useRef<HTMLElement | undefined>();
  
     useEffect(() => {
         const ref = componentRef.current;
- 
-        const eventListener = ($event) => {
+        const eventListener = ($event: any) => {
             setData($event.detail);
         };
  
-        ref.addEventListener(`${eventName}`, colorListener, false);
+        ref?.addEventListener(eventName, eventListener, false);
  
         return () => {
-            ref.removeEventListener(`${eventName}`, 
+             ref?.removeEventListener(`${eventName}`, 
                                      eventListener, true);
         };
     }, [componentRef]);
@@ -52,9 +53,14 @@ function useWebComponentEvent(eventName) {
     return [componentRef, data];
 }
 
+
 // App
 function App() {
     const [componentRef, data] = useWebComponentEvent('event-name');
+
+    useEffect(()=> {
+      // console.log('data ', data)
+    }, [data])
  
     return (
         <div className="App">
