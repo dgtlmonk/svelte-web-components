@@ -32,5 +32,14 @@ $ yarn run build
 Build specific component
 
 ```bash
-$ yarn run workspace {component-name} build
+$  cd packages/your-component
+$  yarn run build
 ```
+
+Build via workspace 
+
+```bash
+$ yarn workspace {workspace-name} run build 
+```
+
+{workspace-name} is the component package name (package.json)

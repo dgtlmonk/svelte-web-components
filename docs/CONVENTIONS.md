@@ -1,8 +1,4 @@
-# Perkd UI Components 
-### Reusable Web Components built with [Svelte](https://svelte.dev)
-
-
-## Conventions
+# Conventions
 
 [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) is recommended for the following reasons
 * Makes it easier for people to contribute to your projects, by allowing them to explore a more structured commit history. 

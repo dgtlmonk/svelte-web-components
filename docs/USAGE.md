@@ -1,15 +1,20 @@
 # Usage 
 
-Web Components allow us to build reusable, customizable elements. A web component’s greatest strength is its interoperability: being natively supported by browsers, web components can be used in any HTML environment, with any framework, or with no framework at all.
+1. Build your component
 
+```bash
+$ cd `packages/your-component/`
+$ yarn run build
+```
 
-
+2. Copy the `js` file from `/dist` folder to your app
+             
 ### HTML
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script type="module" src="{path/to/myweb-component.js}"></script> 
+   <script type="module" src="path/to/web-component.js"></script> 
 </head>
 <body>
   <my-web-component/>
@@ -17,20 +22,6 @@ Web Components allow us to build reusable, customizable elements. A web componen
 </html>
 
 ```
-
-
-### React 
-
-```js
-// main
-import 'path/to/your/web-component.js'
-
-export default () => (
-  <your-custom-component props="value"  />
-)
-
-```
-
 
 ### Vue 
 
@@ -43,7 +34,15 @@ import 'path/to/your/web-component.js'
 </template>
 ```
 
-### Angular
+### React 
+
 ```js
-// todo
+// main
+import 'path/to/web-component.js'
+
+export default () => (
+  <your-custom-component props="value"  />
+)
+
 ```
+
