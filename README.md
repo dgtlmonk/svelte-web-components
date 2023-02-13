@@ -43,3 +43,9 @@ $ yarn workspace {workspace-name} run build
 ```
 
 {workspace-name} is the component package name (package.json)
+
+### Storybook  - Component Testing and Documentation
+
+```bash
+$ yarn run sb
+```
