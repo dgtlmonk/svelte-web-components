@@ -6,7 +6,11 @@
   "workspaces": [
     "packages/*"
   ],
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.17.0"
+  },
   "scripts": {
     "sb": "yarn workspace @perkd-ui/storybook run sb",
     "build": "yarn workspaces run build",
