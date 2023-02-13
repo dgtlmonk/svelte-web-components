@@ -49,3 +49,5 @@ $ yarn workspace {workspace-name} run build
 ```bash
 $ yarn run sb
 ```
+![wc-sb](https://user-images.githubusercontent.com/43092/218355124-79b5146a-e50d-4308-8497-7d1c997db60a.gif)
+
