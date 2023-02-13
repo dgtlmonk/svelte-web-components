@@ -20,8 +20,21 @@
     ├──── storybook                             # storybook 
     └── README.md
 
-### Building 
 
+### Setup
+
+Clone this repository, then install dependencies
+
+```bash
+$ yarn install
+```
+### Creating new component
+
+```bash
+$ yarn run new
+```
+
+### Building 
 
 Build all components
 
@@ -36,13 +49,13 @@ $  cd packages/your-component
 $  yarn run build
 ```
 
-Build via workspace 
+or Build via workspace  (root folder)
 
 ```bash
 $ yarn workspace {workspace-name} run build 
 ```
 
-{workspace-name} is the component package name (package.json)
+{workspace-name} is the Component package `name` in package.json
 
 ### Storybook  - Component Testing and Documentation
 
