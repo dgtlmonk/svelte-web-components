@@ -1,4 +1,4 @@
-# Perkd UI Components (Work In Progress)
+# Perkd UI Components 
 ### Reusable Web Components built with [Svelte](https://svelte.dev)
 
 ## Motivation
