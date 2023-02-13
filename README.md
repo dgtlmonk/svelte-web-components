@@ -18,6 +18,7 @@
     ├────── styles                              # shared component styles 
     ├────────── scss                            # shared scss variables and styles 
     ├──── storybook                             # storybook 
+    ├── .generator                              # new component generator script folder
     └── README.md
 
 
