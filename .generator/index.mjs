@@ -32,7 +32,7 @@ async function init() {
   const componentTag = `${result.componentName.toLowerCase().trim().replace(" ", "-")}`
 
   // Create a new branch for the component
-  exec(`git checkout -b component/${componentTag}`, (err, stdout, stderr) => {
+  exec(`git checkout -b component/${componentTag}`, (err, _stdout, stdmsg) => {
     if (err) {
       console.error(`exec error: ${err}`);
       return;
@@ -40,15 +40,14 @@ async function init() {
 
     copyDir(`${templateFolder}`, `${componentsFolder}/${capitalized(result.componentName)}`)
     updateAssets(result.componentName)
-    showDoneMessage(`${capitalized(result.componentName)}`, `${stderr}`)
+    showDoneMessage(`${capitalized(result.componentName)}`, `${stdmsg}`)
   })
 }
 
 function updateAssets(componentName) {
   updatePackageJSON(componentName)
-  updateComponentStory(componentName)
+  updateStorybookMeta(componentName)
 }
-
 
 async function updatePackageJSON(componentName) {
     const pkg = JSON.parse(
@@ -60,23 +59,27 @@ async function updatePackageJSON(componentName) {
 }
 
 // Update Component story to match component name
-async function updateComponentStory(componentName) {
-  const c = capitalized(componentName)
+async function updateStorybookMeta(componentName)  {
+  const component = capitalized(componentName)
 
-  fs.readFile(path.join(`${templateFolder}/src/stories`, `Component.stories.ts`), 'utf-8', (err, contents) => {
+  fs.readFile(path.join(`${templateFolder}/src/stories`, `Component.stories.ts`), 'utf-8', async (err, contents) => {
     if (err) {
       return console.error(err)
     }
 
-    const updated = contents.replace(/component-name/gi, c)
-    // Write back to file
-    fs.writeFile(`${componentsFolder}/${c}/src/stories/Component.stories.ts`, updated, 'utf-8', err2 => {
-      if (err2) {
-        console.log(err2)
-      }
-    })
+    let content = contents.replace(/component-name/gi, component)
+    // update Storybook meta to match component name 
+    await writeToFile(`${componentsFolder}/${component}/src/stories/Component.stories.ts`, content)
+
+    renameFile(`${componentsFolder}/${component}/src/stories/Component.stories.ts`,
+      `${componentsFolder}/${component}/src/stories/${component}.stories.ts`)
+    
+    renameFile(`${componentsFolder}/${component}/src/Component.svelte`,
+               `${componentsFolder}/${component}/src/${component}.svelte`)
+    
   })
 }
+
 
 function showDoneMessage(componentName, gitBranch) {
     console.log(green(`Your component ${componentName} is ready. \nInstalling dependencies ... \n`))
@@ -114,4 +117,23 @@ function copy(src , dest ) {
   } else {
     fs.copyFileSync(src, dest)
   }
+}
+
+async function writeToFile(file, content, cb) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(file, content, 'utf-8', err => {
+        if (err) {
+          console.log(err)
+        }
+      
+      resolve({})
+    })
+  })
+}
+
+function renameFile(fromFile, toFile) {
+  fs.rename(fromFile , toFile, (err) => {
+    if (err) throw err;
+    // console.log('File renamed successfully!');
+  });
 }

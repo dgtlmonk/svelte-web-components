@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Component from '../Component.svelte';
+import Component from '../component-name.svelte';
 
 
 // Barcode options
