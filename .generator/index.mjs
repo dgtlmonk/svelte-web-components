@@ -1,9 +1,10 @@
 
-// v0.0.1
+// v0.0.2
+import { exec } from 'child_process'
 import prompts from 'prompts'
 import fs from 'fs'
 import path from 'path'
-import { green } from 'kolorist'
+import { green, lightBlue} from 'kolorist'
 
 const componentsFolder = './packages'
 const templateFolder = './.generator/tpl'
@@ -27,10 +28,25 @@ async function init() {
         }]
   )
 
-  const finalComponentName = capitalized(result.componentName);
+
+  const componentTag = `${result.componentName.toLowerCase().trim().replace(" ", "-")}`
+
+  // Create a new branch for the component
+  await exec(`git checkout -b component/${componentTag}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`exec error: ${err}`);
+      return;
+    }
+
+    // Log the output of the command
+    // console.log(`stdout: ${stdout}`);
+    copyDir(`${templateFolder}`, `${componentsFolder}/${capitalized(result.componentName)}`)
+    updateAssets(result.componentName)
+
+    console.log(lightBlue(`${stderr}`));
+  })
   
-  copyDir(`${templateFolder}`, `${componentsFolder}/${finalComponentName}`)
-  updateAssets(result.componentName)
+
 }
 
 function updateAssets(componentName) {
