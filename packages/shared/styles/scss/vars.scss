@@ -1,4 +1,21 @@
+// These are example variables. 
+// Alter them to match your design system.
+// https://sass-lang.com/documentation/variables
 
+$default-theme: true !default;
+
+@if $default-theme {
+  $--subdued: #6D7175;
+  $--default: #202223;
+  $--disabled: #8C9196;
+  $--critical: #D72C0D;
+  $--warning: #916A00;
+  $--success: #008060;
+  $--highlight: #347C84;
+}
+
+// colors
+$perkd-orange: #ffb102;
 
 // radius
 $rad-lg: 0.5rem/* 8px */;

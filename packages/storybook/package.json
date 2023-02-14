@@ -8,7 +8,8 @@
     "node": ">=16.17.0"
   },
   "scripts": {
-    "sb": "storybook dev -p 6006"
+    "sb": "storybook dev -p 6006",
+    "build":"echo 'Nothing to build in Storybook...'"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.39",
