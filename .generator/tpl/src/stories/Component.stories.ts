@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Tpl from '../Template.svelte';
+import Component from '../Component.svelte';
 
 
 // Barcode options
@@ -7,14 +7,14 @@ import Tpl from '../Template.svelte';
 
 const meta = {
   title: 'Example/component-name',
-  component: Tpl,
+  component: Component,
   tags: ['autodocs'],
 
   // Controls - https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
     label: { control: 'text' },
   },
-} satisfies Meta<Tpl>;
+} satisfies Meta<Component>;
 
 
 export default meta;

@@ -1,6 +1,7 @@
+
+// v0.0.1
 import prompts from 'prompts'
 import fs from 'fs'
-// v0.0.1
 import path from 'path'
 import { green } from 'kolorist'
 
@@ -71,14 +72,14 @@ async function updatePackageJSON(componentName) {
 
 // Update Component story to match component name
 async function updateComponentStory(componentName) {
-  fs.readFile(`${templateFolder}/src/stories/Template.stories.ts`, 'utf-8', (err, contents) => {
+  fs.readFile(path.join(`${templateFolder}/src/stories`, `Component.stories.ts`), 'utf-8', (err, contents) => {
     if (err) {
       return console.error(err)
     }
 
     const updated = contents.replace(/component-name/gi, componentName)
     // Write back to file
-    fs.writeFile(`${componentsFolder}/${componentName}/src/stories/Template.stories.ts`, updated, 'utf-8', err2 => {
+    fs.writeFile(`${componentsFolder}/${componentName}/src/stories/Component.stories.ts`, updated, 'utf-8', err2 => {
       if (err2) {
         console.log(err2)
       }
