@@ -125,6 +125,28 @@ export default () => (
 
 ```
 
+## Shared Styles via SCSS
+
+You may also declare and reuse style variables from the shared scss folder. Make sure to set [SASS](http://sass-lang.com) in your style tag.
+
+```js
+
+// vars.scss
+$rad-lg: 0.5rem/* 8px */;
+
+// component
+<style lang="scss">
+  @import '../../shared/styles/scss/vars.scss';
+
+  .custom-css {
+    all: unset;
+    border-radius: $rad-lg;
+  }
+</style>
+
+```
+
+See `packages/StyleViaPropsButton/src/StyleViaPropsButton.svelte` as example.
 
 #### Resources
 * https://css-tricks.com/styling-a-web-component/

@@ -13,6 +13,7 @@ const capitalized = (word) => word.charAt(0).toUpperCase() + word.slice(1)
 init();
 
 async function init() {
+  // Ask for component name
   let result = await prompts(
         [{
             type: 'text',
@@ -37,20 +38,15 @@ async function init() {
       return;
     }
 
-    // Log the output of the command
-    // console.log(`stdout: ${stdout}`);
     copyDir(`${templateFolder}`, `${componentsFolder}/${capitalized(result.componentName)}`)
     updateAssets(result.componentName)
     showDoneMessage(`${capitalized(result.componentName)}`, `${stderr}`)
-    // console.log(lightBlue(`${stderr}`));
   })
 }
 
 function updateAssets(componentName) {
-  const finalComponentName = capitalized(componentName);
-
   updatePackageJSON(componentName)
-  updateComponentStory(finalComponentName)
+  updateComponentStory(componentName)
 }
 
 
@@ -65,14 +61,16 @@ async function updatePackageJSON(componentName) {
 
 // Update Component story to match component name
 async function updateComponentStory(componentName) {
+  const c = capitalized(componentName)
+
   fs.readFile(path.join(`${templateFolder}/src/stories`, `Component.stories.ts`), 'utf-8', (err, contents) => {
     if (err) {
       return console.error(err)
     }
 
-    const updated = contents.replace(/component-name/gi, componentName)
+    const updated = contents.replace(/component-name/gi, c)
     // Write back to file
-    fs.writeFile(`${componentsFolder}/${componentName}/src/stories/Component.stories.ts`, updated, 'utf-8', err2 => {
+    fs.writeFile(`${componentsFolder}/${c}/src/stories/Component.stories.ts`, updated, 'utf-8', err2 => {
       if (err2) {
         console.log(err2)
       }

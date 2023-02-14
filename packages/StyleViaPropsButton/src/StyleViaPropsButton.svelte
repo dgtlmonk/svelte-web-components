@@ -8,15 +8,17 @@
 <button
   type="button"
   style="--button-color: {color}; --button-bg-color: {bgColor}"
-  class="custom-css">
+  class="custom-css rounded-sm">
   {label}
 </button>
 
-<style>
+<style lang="scss">
+  // Using shared styles variables
+  @import '../../shared/styles/scss/vars.scss';
     .custom-css {
       all: unset;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: $rad-lg;
       color: var(--button-color);
       background-color: var(--button-bg-color);
     }
