@@ -1,5 +1,6 @@
 import prompts from 'prompts'
 import fs from 'fs'
+// v0.0.1
 import path from 'path'
 import { green } from 'kolorist'
 
@@ -10,7 +11,7 @@ const capitalized = (word) => word.charAt(0).toUpperCase() + word.slice(1)
 init();
 
 async function init() {
-    let result = await prompts(
+  let result = await prompts(
         [{
             type: 'text',
             name: 'componentName',
@@ -23,13 +24,18 @@ async function init() {
                 return value.length > 0 ? true : 'Please enter a name for the component'
             } 
         }]
-    )
+  )
 
-
-  const finalComponentName = capitalized(result.componentName) 
+  const finalComponentName = capitalized(result.componentName);
   
   copyDir(`${templateFolder}`, `${componentsFolder}/${finalComponentName}`)
-  updatePackageJSON(result.componentName)
+  updateAssets(result.componentName)
+}
+
+function updateAssets(componentName) {
+  const finalComponentName = capitalized(componentName);
+
+  updatePackageJSON(componentName)
   updateComponentStory(finalComponentName)
   showDoneMessage(finalComponentName)
 }
@@ -63,13 +69,13 @@ async function updatePackageJSON(componentName) {
     fs.writeFileSync(`${componentsFolder}/${componentName}/package.json` , JSON.stringify(pkg, null, 2))   
 }
 
+// Update Component story to match component name
 async function updateComponentStory(componentName) {
   fs.readFile(`${templateFolder}/src/stories/Template.stories.ts`, 'utf-8', (err, contents) => {
     if (err) {
       return console.error(err)
     }
 
-    // Replace string occurrences
     const updated = contents.replace(/component-name/gi, componentName)
     // Write back to file
     fs.writeFile(`${componentsFolder}/${componentName}/src/stories/Template.stories.ts`, updated, 'utf-8', err2 => {

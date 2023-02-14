@@ -2,16 +2,18 @@
 <script lang="ts">
 import { get_current_component } from "svelte/internal";
 
+  // exposed component props 
   export let label: string = '';
+  // export let my-other-props: string = '';
 
   let count: number = 0
 
   // Event name to be handled by host Component. See EVENT-HANDLER.md
-  const myCustomEvent = "on-count"
-
-  // Event Dispatcher
+  const myCustomEvent = "on-count";
   const component: any = get_current_component();
 
+
+  // Event Dispatcher
   // TODO: Move to Shared lib
   const dispatch = (name, detail ) => {
     component?.dispatchEvent(
@@ -50,7 +52,6 @@ import { get_current_component } from "svelte/internal";
   color: white;
   background-color: #1ea7fd;
 }
-
 </style>
 
 
