@@ -4,7 +4,7 @@
 ## Motivation
 * Reuse components across different platform using web standards
 * Isolate component development
-* Focus on Business requirements (and not the tech)
+* Code once, deploy anywhere.
 
 
 ### Folders
