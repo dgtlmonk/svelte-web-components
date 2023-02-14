@@ -2,7 +2,7 @@
   "name": "perkd-ui-components",
   "private": true,
   "author": "Joel Pablo<joel@waveo.com>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "workspaces": [
     "packages/*"
   ],
