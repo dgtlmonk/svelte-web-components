@@ -28,11 +28,10 @@ async function init() {
         }]
   )
 
-
   const componentTag = `${result.componentName.toLowerCase().trim().replace(" ", "-")}`
 
   // Create a new branch for the component
-  await exec(`git checkout -b component/${componentTag}`, (err, stdout, stderr) => {
+  exec(`git checkout -b component/${componentTag}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`exec error: ${err}`);
       return;
@@ -42,11 +41,9 @@ async function init() {
     // console.log(`stdout: ${stdout}`);
     copyDir(`${templateFolder}`, `${componentsFolder}/${capitalized(result.componentName)}`)
     updateAssets(result.componentName)
-
-    console.log(lightBlue(`${stderr}`));
+    showDoneMessage(`${capitalized(result.componentName)}`, `${stderr}`)
+    // console.log(lightBlue(`${stderr}`));
   })
-  
-
 }
 
 function updateAssets(componentName) {
@@ -54,28 +51,8 @@ function updateAssets(componentName) {
 
   updatePackageJSON(componentName)
   updateComponentStory(finalComponentName)
-  showDoneMessage(finalComponentName)
 }
 
-
-function copyDir(srcDir, destDir) {
-  fs.mkdirSync(destDir, { recursive: true })
-
-  for (const file of fs.readdirSync(srcDir)) {
-    const srcFile = path.resolve(srcDir, file)
-    const destFile = path.resolve(destDir, file)
-    copy(srcFile, destFile)
-  }
-}
-
-function copy(src , dest ) {
-  const stat = fs.statSync(src)
-  if (stat.isDirectory()) {
-    copyDir(src, dest)
-  } else {
-    fs.copyFileSync(src, dest)
-  }
-}
 
 async function updatePackageJSON(componentName) {
     const pkg = JSON.parse(
@@ -103,12 +80,40 @@ async function updateComponentStory(componentName) {
   })
 }
 
-function showDoneMessage(componentName) {
-    console.log(green(`\nDone.\n\nYour component ${componentName} is ready. Now run: \n`))
-    console.log(`$ cd packages/${componentName}`)
-    console.log(`$ yarn install`)
-    console.log(green(`\nRun storybook to see your component:`))
-    console.log(`$ yarn run sb\n`)
+function showDoneMessage(componentName, gitBranch) {
+    console.log(green(`Your component ${componentName} is ready. \nInstalling dependencies ... \n`))
+    exec(`yarn install --silent`, (err ) => { 
+      if (err) {
+        console.error(`exec error: ${err}`);
+        return;
+      }
+      console.log(`Dependencies installed.`)
+
+      console.log(green(`\nYour component folder:`))
+      console.log(`packages/${componentName}`)
+
+      console.log(green(`\nRun storybook to see your component:`))
+      console.log(`$ yarn run sb\n`)
+
+      console.log(lightBlue(`${gitBranch}`));
+    })
 }
 
+function copyDir(srcDir, destDir) {
+  fs.mkdirSync(destDir, { recursive: true })
 
+  for (const file of fs.readdirSync(srcDir)) {
+    const srcFile = path.resolve(srcDir, file)
+    const destFile = path.resolve(destDir, file)
+    copy(srcFile, destFile)
+  }
+}
+
+function copy(src , dest ) {
+  const stat = fs.statSync(src)
+  if (stat.isDirectory()) {
+    copyDir(src, dest)
+  } else {
+    fs.copyFileSync(src, dest)
+  }
+}
