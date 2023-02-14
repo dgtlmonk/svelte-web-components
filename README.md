@@ -35,6 +35,13 @@ $ yarn install
 $ yarn run new
 ```
 
+![wc-generator](https://user-images.githubusercontent.com/43092/218631621-59b0134c-cc25-4c09-a904-682ff2c19628.gif)
+
+Creating new component creates:
+1. Component folder
+2. Component  Git branch to avoid accidental commit to `master` branch. Pull request is encouraged.
+
+
 ### Building 
 
 Build all components
