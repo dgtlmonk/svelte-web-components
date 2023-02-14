@@ -34,12 +34,13 @@ $ yarn install
 ```bash
 $ yarn run new
 ```
+![wc-generator](https://user-images.githubusercontent.com/43092/218636329-c1636efe-1c40-4073-a3f5-d55de09e25f6.gif)
 
-![wc-generator](https://user-images.githubusercontent.com/43092/218631621-59b0134c-cc25-4c09-a904-682ff2c19628.gif)
 
 Creating new component creates:
 1. Component folder
-2. Component  Git branch to avoid accidental commit to `master` branch. Pull request is encouraged.
+2. Component Storybook
+3. Component Git branch to avoid accidental commit to `master` branch. Pull request is encouraged.
 
 
 ### Building 
