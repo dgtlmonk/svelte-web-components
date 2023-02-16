@@ -12,6 +12,8 @@
   export let iconColor: string = null;
   export let text: string = 'untitled';
   export let textColor: string = null;
+  export let fontWeight: number= 700;
+  export let fontSize: number = 1.5;
   // -------------------------------------------------
 
   /** -------------------------------------------------
@@ -29,7 +31,9 @@
   class="nav wrapper"
   style="--nav-header-bg-color: {bgColor}; 
          --nav-header-text-color: {textColor};
-         --nav-header-icon-color: {iconColor};"
+         --nav-header-icon-color: {iconColor};
+         --nav-header-font-weight: {fontWeight};
+         font-size: {fontSize}rem;"
 >
 
  <div class="nav-control-container">
@@ -123,6 +127,7 @@
   }
   .title {
     color: var(--nav-header-text-color,  #954700);
+    font-weight: var(--nav-header-font-weight, 700);
   }
 
   .nav-control-container {

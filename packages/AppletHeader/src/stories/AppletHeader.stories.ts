@@ -17,6 +17,7 @@ const meta = {
     close: { control: 'boolean' },
     textColor: { control: 'color' },
     iconColor: { control: 'color' },
+    fontSize: { control: 'number' },
   },
 } satisfies Meta<Component>;
 
