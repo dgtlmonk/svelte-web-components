@@ -1,4 +1,4 @@
-export  const dispatch = (name, detail, component) => {
+export default (name, component, detail = {}) => {
     component?.dispatchEvent(new CustomEvent(name,
       { detail,
       cancelable: true,

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "sb": "storybook dev -p 6006",
-    "build":"echo 'Nothing to build in Storybook...'"
+    "build": "echo 'Nothing to build in Storybook...'"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.39",
@@ -19,15 +19,15 @@
     "@storybook/svelte": "^7.0.0-beta.39",
     "@storybook/svelte-vite": "^7.0.0-beta.39",
     "@storybook/testing-library": "^0.0.14-next.1",
+    "@sveltejs/vite-plugin-svelte": "^2.0.0",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.13",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.58.0",
     "storybook": "^7.0.0-beta.39",
     "storybook-addon-sass-postcss": "^0.1.3",
-    "@sveltejs/vite-plugin-svelte": "^2.0.0",
-    "@tsconfig/svelte": "^3.0.0",
-    "autoprefixer": "^10.4.13",
     "svelte": "^3.54.0",
     "svelte-check": "^2.10.0",
     "tslib": "^2.4.1",
