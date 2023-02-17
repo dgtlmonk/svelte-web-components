@@ -13,11 +13,11 @@ const meta = {
   // Controls - https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
     back: { control: 'boolean' },
-    bgColor: { control: 'color' },
+    bg_color: { control: 'color' },
     close: { control: 'boolean' },
-    textColor: { control: 'color' },
-    iconColor: { control: 'color' },
-    fontSize: { control: 'number' },
+    font_size: { control: 'number' },
+    icon_color: { control: 'color' },
+    text_color: { control: 'color' },
   },
 } satisfies Meta<Component>;
 

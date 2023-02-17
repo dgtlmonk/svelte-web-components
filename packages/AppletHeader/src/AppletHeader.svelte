@@ -6,34 +6,34 @@
   /** -------------------------------------------------
    * Props
    */
-  export let bgColor: string = null;
-  export let close: boolean = false
   export let back: boolean = false
-  export let iconColor: string = null;
+  export let bg_color: string = null;
+  export let close: boolean = false
+  export let font_size: number = 1.5;
+  export let font_weight: number= 700;
+  export let icon_color: string = null;
+  export let text_color: string = null;
   export let text: string = 'untitled';
-  export let textColor: string = null;
-  export let fontWeight: number= 700;
-  export let fontSize: number = 1.5;
   // -------------------------------------------------
 
   /** -------------------------------------------------
-   * Events
+   * Endvents
    */
    const closeEvt: string = 'on-close';
    const backEvt: string = 'on-back';
   // -------------------------------------------------
 
   const _this = get_current_component();
+
   
 </script>
 
 <div 
   class="nav wrapper"
-  style="--nav-header-bg-color: {bgColor}; 
-         --nav-header-text-color: {textColor};
-         --nav-header-icon-color: {iconColor};
-         --nav-header-font-weight: {fontWeight};
-         font-size: {fontSize}rem;"
+  style="--nav-header-bg-color: {bg_color}; 
+         --nav-header-text-color: {text_color};
+         --nav-header-icon-color: {icon_color};
+         --nav-header-font-weight: {font_weight};"
 >
 
  <div class="nav-control-container">
@@ -43,11 +43,11 @@
       on:keydown={() => dispatch(backEvt, _this, {})}> 
 
       {#if back}
-        <!-- <SVG
+         <!-- <SVG
           scale={.9}
           viewBox="0 0 20 20"
           d="m4 10l9 9l1.4-1.5L7 10l7.4-7.5L13 1z"
-        />  -->
+        />   -->
         <span class="control-icon" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +64,8 @@
       {/if}
     </div>
  </div>
- <span class="title">
-  {text}
+ <span class="title" style="font-size: {font_size}rem;">
+  {text} 
  </span>
  <div class="nav-control-container">
     <div class="control-wrapper" 
