@@ -80,7 +80,6 @@ async function updateStorybookMeta(componentName)  {
   })
 }
 
-
 function showDoneMessage(componentName, gitBranch) {
     console.log(green(`Your component ${componentName} is ready. \nInstalling dependencies ... \n`))
     exec(`yarn install --silent`, (err ) => { 
@@ -99,6 +98,10 @@ function showDoneMessage(componentName, gitBranch) {
       console.log(lightBlue(`${gitBranch}`));
     })
 }
+
+// ----------------------------------------------
+// HELPER FUNCTIONS
+// ! May need await for async functions (file operations) if they become issues
 
 function copyDir(srcDir, destDir) {
   fs.mkdirSync(destDir, { recursive: true })
