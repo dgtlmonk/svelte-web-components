@@ -84,6 +84,8 @@ $ yarn run sb
 * [Known Issues](https://github.com/perkd/web-components/blob/master/docs/KNOWN-ISSUES.md)
 
 
+### Svelte CustomElementsEverywhere 100% Test score
+[Svelte scored 100%](https://custom-elements-everywhere.com/libraries/svelte/results/results.html)
 ### :nut_and_bolt: Dependencies
 
 | Name                                                                                   | License                                                                                                                           | Description                                                                                                                |
