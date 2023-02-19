@@ -8,7 +8,7 @@ const meta = {
   component: Component,
   tags: ['autodocs'],
   argTypes: {
-    bgColor: { control: 'color' },
+    bg_color: { control: 'color' },
     color: { control: 'color' },
     label: { control: 'text' },
 
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     label: 'Click Me',
-    bgColor: '#377cd7',
+    bg_color: '#377cd7',
     color: 'white'
   },
 };

@@ -8,12 +8,12 @@
 <script lang="ts">
   export let label: string = 'Hi';
   export let color: string = '';
-  export let bgColor: string = '#377cd7';
+  export let bg_color: string = '#377cd7';
 </script>
 
 <button
   type="button"
-  style="--button-color: {color}; --button-bg-color: {bgColor}"
+  style="--button-color: {color}; --button-bg-color: {bg_color}"
   class="my-button">
   {label}
 </button>
@@ -35,7 +35,7 @@
 import 'path/to/your/web-component.js'
 
 <template>
-  <c-button label="hello world"  color="white" bgColor="blue" />
+  <c-button label="hello world"  color="white" bg_color="blue" />
 </template>
 
 `
@@ -47,11 +47,10 @@ import 'path/to/your/web-component.js'
 import 'path/to/your/web-component.js'
 
 export default () => (
-  <c-button label="hello world"  color="white" bgColor="blue" />
+  <c-button label="hello world"  color="white" bg_color="blue" />
 )
 
 ```
-
 
 
 

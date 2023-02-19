@@ -2,12 +2,12 @@
 <script lang="ts">
   export let label: string = 'Hi';
   export let color: string = '';
-  export let bgColor: string = '#377cd7';
+  export let bg_color: string = '#377cd7';
 </script>
 
 <button
   type="button"
-  style="--button-color: {color}; --button-bg-color: {bgColor}"
+  style="--button-color: {color}; --button-bg-color: {bg_color}"
   class="custom-css rounded-sm">
   {label}
 </button>

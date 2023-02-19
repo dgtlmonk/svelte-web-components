@@ -30,7 +30,7 @@ $ yarn run build
 import 'path/to/your/web-component.js'
 
 <template>
-  <your-custom-component stringProps="value" :numberProps="10" @event-name="myHandler"  />
+  <your-custom-component string_props="value" :number_props="10" @event-name="myHandler"  />
 </template>
 ```
 

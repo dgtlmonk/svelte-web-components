@@ -73,7 +73,18 @@ $ yarn run sb
 ```
 ![wc-sb](https://user-images.githubusercontent.com/43092/218355124-79b5146a-e50d-4308-8497-7d1c997db60a.gif)
 
-## :nut_and_bolt: Dependencies
+
+### :memo: Docs
+
+* [Prop types](https://github.com/perkd/web-components/blob/master/docs/PROP-TYPES.md)
+* [Styling](https://github.com/perkd/web-components/blob/master/docs/STYLING.md)
+* [Event handling](https://github.com/perkd/web-components/blob/master/docs/EVENT-HANDLER.md)
+* [Importing](https://github.com/perkd/web-components/blob/master/docs/USAGE.md)
+* [Commit conventions](https://github.com/perkd/web-components/blob/master/docs/CONVENTIONS.md)
+* [Known Issues](https://github.com/perkd/web-components/blob/master/docs/KNOWN-ISSUES.md)
+
+
+### :nut_and_bolt: Dependencies
 
 | Name                                                                                   | License                                                                                                                           | Description                                                                                                                |
 | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |

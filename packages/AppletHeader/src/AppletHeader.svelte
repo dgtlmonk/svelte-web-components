@@ -25,6 +25,9 @@
 
   const _this = get_current_component();
 
+  $: {
+    console.log($$props)
+  }
   
 </script>
 
