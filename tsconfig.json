@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
+    "rootDir": "./packages",
     "composite": true,
     "module": "ESNext",
     "target": "ESNext",
@@ -17,8 +18,7 @@
     "checkJs": true,
     "isolatedModules": true
   },
-  "include": ["./packages/**/src/**/*.d.ts", "./packages/**/src/**/*.ts", "./packages/**/src/**/*.js", "./packages/**/src/**/*.svelte"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./packages/**/src/**/*.d.ts", "./packages/**/src/**/*.ts", "./packages/**/src/**/*.js", "./packages/**/src/**/*.svelte"]
 }
 
 

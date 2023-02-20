@@ -23,11 +23,8 @@
    const backEvt: string = 'on-back';
   // -------------------------------------------------
 
+  // Component reference for dispatching events
   const _this = get_current_component();
-
-  $: {
-    console.log($$props)
-  }
   
 </script>
 
