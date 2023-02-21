@@ -1,7 +1,7 @@
 {
   "name": "@perkd-ui/c-tpl",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.1",
   "type": "module",
   "engines": {
     "npm": ">=8.0.0 <9.0.0",
@@ -9,17 +9,23 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "pretty": "npx prettier --config ../../.prettierrc --loglevel warn --write  \"./**/*.{ts,svelte,css,json}\" ",
+    "lint": "npx eslint --config ../../.eslintrc ./src --ext .svelte,.js,.ts, --quiet --fix"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "@tsconfig/svelte": "^3.0.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
     "rollup-plugin-folder-input": "^1.0.1",
     "svelte": "^3.54.0",
     "svelte-check": "^2.10.0",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
-  },
-  "dependencies": {}
+  }
 }

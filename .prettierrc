@@ -1,0 +1,16 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "css",
+  "semi": false,
+  "useTabs": false,
+  "singleQuote": false,
+    "overrides": [ {
+    "files": "*.svelte",
+    "options": {
+      "plugins": [ "prettier-plugin-svelte" ]
+    }
+  } ],
+  "pluginSearchDirs": [ "." ]
+}
