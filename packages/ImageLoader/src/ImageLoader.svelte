@@ -2,17 +2,23 @@
 
 <script lang="ts">
   import { onMount } from "svelte"
+  import { get_current_component } from "svelte/internal"
+  import dispatch from "../../shared/utils/dispatch"
 
   export let src: string = ""
   export let border_radius: number = 12
-  export let unit: string = "px"
   export let width: number = null
   export let height: number = null
+  export let unit: string = "px"
 
   let isLoading = true
-  const img = new Image()
-  const minWidth = 220,
-    minHeight = 120
+  const img = new Image(),
+    minWidth = 220,
+    minHeight = 120,
+    // Image click event name
+    clickEvt: string = "image-click",
+    // Component reference for dispatching events
+    _this = get_current_component()
 
   onMount(() => {
     img.src = src
@@ -28,15 +34,20 @@
 </script>
 
 <div
+  on:click={() => dispatch(clickEvt, _this)}
+  on:keydown={() => dispatch(clickEvt, _this)}
   class="container"
-  style={`--border-radius: ${border_radius}px; 
+  role="button"
+  style={`--border-radius:${border_radius}px; 
             --container-height: ${height}${unit};
             --container-width: ${width}${unit};
-                  min-width: ${minWidth}${unit}; 
-                  min-height:${minHeight}${unit}`}
+                    min-width: ${minWidth}${unit}; 
+                   min-height: ${minHeight}${unit}
+                   --min-height: ${minHeight}${unit}
+                   `}
 >
   {#if isLoading}
-    <div class="loader-bg" />
+    <div class="pulse-loader" />
   {:else}
     <img
       {src}
@@ -50,26 +61,6 @@
 <style lang="scss">
   @import "../../shared/styles/scss/animation.scss";
 
-  %img-wrapper {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius);
-    bottom: -3px;
-  }
-  .loader-bg {
-    background: #f3f4f6;
-    position: relative;
-    @extend %animate-pulse;
-    @extend %img-wrapper;
-  }
-
-  img {
-    object-fit: fill;
-    overflow: hidden;
-    position: relative;
-    @extend %img-wrapper;
-  }
-
   .container {
     width: var(--container-width, 100%);
     height: var(--container-height, 100%);
@@ -81,5 +72,28 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
       var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     background: transparent;
+    overflow: hidden;
+  }
+  %img-wrapper {
+    width: 100%;
+    height: 100%;
+    min-width: var(--container-width, 100%);
+    min-height: var(--container-height, 100%);
+    border-radius: var(--border-radius);
+    vertical-align: middle;
+  }
+  .pulse-loader {
+    background: #f3f4f6;
+    position: relative;
+    min-height: var(--min-height, 220px);
+    @extend %animate-pulse;
+    @extend %img-wrapper;
+  }
+
+  img {
+    object-fit: cover;
+    overflow: hidden;
+    height: auto;
+    @extend %img-wrapper;
   }
 </style>
