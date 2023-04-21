@@ -1,7 +1,7 @@
 {
-  "name": "perkd-ui-components",
+  "name": "svelte-ui-components",
   "private": true,
-  "author": "Joel Pablo<joel@waveo.com>",
+  "author": "Joel Pablo<hello@dgtlmonk.dev>",
   "version": "0.0.4",
   "workspaces": [
     "packages/*"
