@@ -12,7 +12,7 @@
     "node": ">=16.17.0"
   },
   "bugs": {
-    "url": "https://github.com/perkd/web-components/issues"
+    "url": "https://github.com/dgtlmonk/svelte-web-components/issues"
   },
   "scripts": {
     "sb": "yarn workspace @perkd-ui/storybook run sb",
