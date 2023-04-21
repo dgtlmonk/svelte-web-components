@@ -1,4 +1,3 @@
-# Perkd UI Components 
 ### :rocket:  Reusable Web Components built with [Svelte](https://svelte.dev)
 
 ## Motivation
