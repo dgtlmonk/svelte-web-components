@@ -16,7 +16,6 @@
   export let icon_color: string = null
   export let text_color: string = null
   export let text: string = "untitled"
-  // -------------------------------------------------
 
   /** -------------------------------------------------
    * Endvents
