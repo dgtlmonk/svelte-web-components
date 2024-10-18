@@ -54,7 +54,7 @@ async function updatePackageJSON(componentName) {
         fs.readFileSync(path.join(`${templateFolder}`, `package.json`), 'utf-8'),
     )
     // Update package name to match workspace name pattern
-    pkg.name = `@perkd-ui/c-${componentName.toLowerCase().trim().replace(" ", "-")}`
+    pkg.name = `@ui/c-${componentName.toLowerCase().trim().replace(" ", "-")}`
     fs.writeFileSync(`${componentsFolder}/${componentName}/package.json` , JSON.stringify(pkg, null, 2))   
 }
 

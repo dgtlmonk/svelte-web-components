@@ -1,5 +1,5 @@
 {
-  "name": "@perkd-ui/storybook",
+  "name": "@ui/storybook",
   "private": true,
   "version": "0.1.0",
   "type": "module",

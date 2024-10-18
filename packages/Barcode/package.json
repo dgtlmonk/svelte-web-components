@@ -1,5 +1,5 @@
 {
-  "name": "@perkd-ui/barcode",
+  "name": "@ui/barcode",
   "private": true,
   "version": "0.1.0",
   "type": "module",

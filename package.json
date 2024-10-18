@@ -1,8 +1,8 @@
 {
-  "name": "perkd-ui-components",
+  "name": "ui",
   "private": true,
   "author": "Joel Pablo<joel@waveo.com>",
-  "version": "0.0.4",
+  "version": "0.2.0",
   "workspaces": [
     "packages/*"
   ],
@@ -12,10 +12,10 @@
     "node": ">=16.17.0"
   },
   "bugs": {
-    "url": "https://github.com/perkd/web-components/issues"
+    "url": "https://github.com/dgtlmonk/svelte-web-components/issues"
   },
   "scripts": {
-    "sb": "yarn workspace @perkd-ui/storybook run sb",
+    "sb": "yarn workspace @ui/storybook run sb",
     "build": "yarn workspaces run build",
     "pretty": "yarn workspaces run pretty",
     "lint": "yarn workspaces run lint",

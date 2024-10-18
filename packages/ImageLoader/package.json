@@ -1,5 +1,5 @@
 {
-  "name": "@perkd-ui/image-loader",
+  "name": "@ui/image-loader",
   "private": true,
   "version": "0.1.0",
   "type": "module",
