@@ -1,4 +1,4 @@
-# Perkd UI Components 
+# Web Components 
 ### :rocket:  Reusable Web Components built with [Svelte](https://svelte.dev)
 
 ## Motivation
@@ -76,12 +76,12 @@ $ yarn run sb
 
 ### :memo: Docs
 
-* [Prop types](https://github.com/perkd/web-components/blob/master/docs/PROP-TYPES.md)
-* [Styling](https://github.com/perkd/web-components/blob/master/docs/STYLING.md)
-* [Event handling](https://github.com/perkd/web-components/blob/master/docs/EVENT-HANDLER.md)
-* [Importing](https://github.com/perkd/web-components/blob/master/docs/USAGE.md)
-* [Commit conventions](https://github.com/perkd/web-components/blob/master/docs/CONVENTIONS.md)
-* [Known Issues](https://github.com/perkd/web-components/blob/master/docs/KNOWN-ISSUES.md)
+* [Prop types](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/PROP-TYPES.md)
+* [Styling](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/STYLING.md)
+* [Event handling](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/EVENT-HANDLER.md)
+* [Importing](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/USAGE.md)
+* [Commit conventions](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/CONVENTIONS.md)
+* [Known Issues](https://github.com/dgtlmonk/svelte-web-components/blob/master/docs/KNOWN-ISSUES.md)
 
 
 ### Svelte CustomElementsEverywhere 100% Test score
