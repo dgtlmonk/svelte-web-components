@@ -38,8 +38,7 @@ import 'path/to/your/web-component.js'
   <c-button label="hello world"  color="white" bg_color="blue" />
 </template>
 
-`
-``
+```
 ### ReactJS
 
 ```js
